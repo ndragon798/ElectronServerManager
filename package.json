@@ -1,0 +1,15 @@
+{
+  "name": "servermanager",
+  "version": "1.0.0",
+  "description": "A Homelab Server Manager",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^4.0.0",
+    "jquery": "^3.3.1"
+  }
+}
