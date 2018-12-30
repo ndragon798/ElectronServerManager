@@ -48,7 +48,7 @@ function createServiceDom() {
   serviceCount++;
   // Create Row Div
   const serviceRow = document.createElement('div');
-  serviceRow.className = 'row'
+  serviceRow.className = 'row';
   // Create input-field div col s6
   const serviceDiv = document.createElement('div');
   serviceDiv.className = 'input-field col s6';
@@ -79,11 +79,11 @@ function createServiceDom() {
   portNumberInput.setAttribute('name', 'portNumber');
   portNumberInput.setAttribute('type', 'number');
   portNumberInput.setAttribute('min', '1');
-  portNumberInput.setAttribute('max', '65535')
+  portNumberInput.setAttribute('max', '65535');
   portNumberInput.setAttribute('id', 'port' + serviceCount + 'number');
   // Create Switch for SSL/TLS
   const sslSwitchDiv = document.createElement('div');
-  sslSwitchDiv.className = "switch col 2"
+  sslSwitchDiv.className = "switch col 2";
   const sslSwitchTextDiv = document.createElement('div');
   const sslSwitchTextDivText = document.createTextNode('SSL/TLS');
   // Hook switchTextDiv & switchTextDivText Together
@@ -99,7 +99,7 @@ function createServiceDom() {
   sslSwitchLabel.appendChild(sslSwitchInput);
   sslSwitchLabel.appendChild(sslSwitchSpan);
   sslSwitchDiv.appendChild(sslSwitchTextDiv);
-  sslSwitchDiv.appendChild(sslSwitchLabel)
+  sslSwitchDiv.appendChild(sslSwitchLabel);
   // Create Trash Div div col 1
   const trashDiv = document.createElement('div');
   trashDiv.className = "col s1";
@@ -125,7 +125,7 @@ function createServiceDom() {
 
   // Hook all into main form
   formdiv.appendChild(serviceRow);
-};
+}
 
 function deleteService(e) {
   console.log('Delete Service');
@@ -134,4 +134,4 @@ function deleteService(e) {
     topDiv.removeChild(topDiv.firstChild);
   }
   topDiv.parentNode.removeChild(topDiv);
-};
+}

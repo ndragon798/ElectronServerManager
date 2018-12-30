@@ -27,7 +27,7 @@ window.onload = function () {
   //Add
   ipcRenderer.on("server:add", function (e, serverItems) {
     //Make Ul collapsible
-    ul.className = "collapsible"
+    ul.className = "collapsible";
     //Create li
     const li = document.createElement('li');
     // Create Header
@@ -43,7 +43,7 @@ window.onload = function () {
     if (serverItems[2]) {
       const openArt = document.createElement('i');
       const openText = document.createTextNode('open_in_browser');
-      openButton.setAttribute('href', "http://" + serverItems[0])
+      openButton.setAttribute('href', "http://" + serverItems[0]);
       openButton.className = 'secondary-content';
       openArt.className = 'material-icons';
       openArt.appendChild(openText);
@@ -72,7 +72,7 @@ window.onload = function () {
       const serviceNameText = document.createTextNode(servicenames + " : " + serviceports);
       // Create Online Badge
       const onlineSpan = document.createElement('span');
-      onlineSpan.className = "badge grey"
+      onlineSpan.className = "badge grey";
       onlineSpan.setAttribute('name', serverItems[0] + serviceports);
       var onlineText = document.createTextNode('Checking');
       ipcRenderer.send('service:check:status', [serverItems[0], serviceports,serviceSSL]);
@@ -90,7 +90,7 @@ window.onload = function () {
       // Bind Stuff Together
       serviceNameSpan.appendChild(serviceNameText);
       serviceLi.appendChild(serviceNameSpan);
-      serviceLi.appendChild(onlineSpan)
+      serviceLi.appendChild(onlineSpan);
       servicesUl.appendChild(serviceLi);
     }
     // Bind Service Ul to body
@@ -105,7 +105,7 @@ window.onload = function () {
     M.AutoInit();
 
   });
-}
+};
 //Clear
 ipcRenderer.on("server:clear", function (e, serverItems) {
   ul.parentNode.removeChild(ul);
@@ -117,15 +117,15 @@ ipcRenderer.on("server:clear", function (e, serverItems) {
 // 0 - Item Array - 0 - IP ADDRESS - 1 - PORT
 // 1 - On/Offline
 ipcRenderer.on('service:reply:status', function (e, serverItems) {
-  console.log("Got " + "service:reply:status")
-  console.log(serverItems)
+  console.log("Got " + "service:reply:status");
+  console.log(serverItems);
   onlineSpan = document.getElementsByName(serverItems[0][0] + serverItems[0][1])[0];
   if (serverItems[1]) {
     onlineSpan.className = "badge green";
-    onlineSpan.textContent = "Online"
+    onlineSpan.textContent = "Online";
   } else {
     onlineSpan.className = "badge red";
-    onlineSpan.textContent = "Offline"
+    onlineSpan.textContent = "Offline";
 
   }
 });
@@ -142,4 +142,4 @@ function deleteService(e) {
     topDiv.removeChild(topDiv.firstChild);
   }
   topDiv.parentNode.removeChild(topDiv);
-};
+}
